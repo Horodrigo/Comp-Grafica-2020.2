@@ -79,5 +79,5 @@ Não apenas três, mas várias retas foram traçadas para testar o algoritmo e t
 
 ![Retas](https://github.com/Horodrigo/Comp-Grafica-2020.2/tree/main/images/Linhas_Octantes.png?raw=true)
 
-A primeira imagem foi usada para gerar pontos cardinais e subcardinais, de modo a se verificar com precisão as retas verticais e horizontais. Na segunda, várias retas foram geradas em dimensões diferentes para se verificar o funcionamento do algoritmo.
+A primeira imagem foi usada para gerar retas octantes, de modo a se verificar com precisão as retas verticais e horizontais. Na segunda, várias retas foram geradas em dimensões diferentes para se verificar o funcionamento do algoritmo.
 
