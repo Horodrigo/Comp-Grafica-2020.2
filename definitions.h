@@ -38,7 +38,6 @@ void dydx (Point pointA, Point pointB);
 
 //  ALGORITMOS PARA RASTERIZAR LINHAS
 
-void DDA (Point pointA, Point pointB);
 void equacao_geral_reta(Point pointA, Point pointB);
 void bresenham(Point pointA, Point pointB);
 
