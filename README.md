@@ -1,12 +1,8 @@
-# IFCE - Computação Gráfica- Rasterização de Linhas
-
-Rodrigo Viana Castelo Branco - 20152017020218
-
 # Introdução
 
-  Este trabalho tem como objetivo apresentar alguns algoritmos para rasterização de linhas em um monitor gráfico diretamente e memória de video, como os sistemas operacionais modernos impedem acesso direto a memória de vídeo, foi utilizado um framework para realizar esta simulação.
+  Este trabalho tem como objetivo apresentar um algoritmo para rasterização de pelo menos três linhas em um monitor.
 
-Mas antes, devemos conhecer alguns conceitos como: primitivas, rasterização, como rasterizar primitivas gráficas.
+Mas antes, apresentarei alguns conceitos aprendidos em aula como: primitivas, rasterização, como rasterizar primitivas gráficas.
   
 ## Rasterização
 
