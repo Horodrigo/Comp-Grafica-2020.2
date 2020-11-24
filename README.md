@@ -62,7 +62,7 @@ Obtemos:
 decisão = f(x,y) = αx + ßy + c = 0
 ````
 
-## Debugging - Algoritmo de Bresenham
+## Debugando Bresenham
 
 Execução do algoritmo de Bresenham
 
