@@ -20,7 +20,7 @@ Mas antes, devemos conhecer alguns conceitos como: primitivas, rasterização, c
 É composto por três canais de cores - Vermelho, Verde e Azul, e mais um canal para tratar a transparência destas cores, chamamos este canal de alpha, compondo um sistema chamado RGBA.
   
   
-  ![DisposiÃ§Ã£o_Pixel](https://github.com/FelipeNasci/Line_Rasterization/blob/master/images/Disposi%C3%A7%C3%A3o_Pixel.png?raw=true)
+  ![DisposiÃ§Ã£o_Pixel](https://github.com/Horodrigo/Comp-Grafica-2020.2/tree/main/images/Disposi%C3%A7%C3%A3o_Pixel.png?raw=true)
   
   Para uma melhor clareza de código, foram utilizadas 02 estruturas:
 
@@ -52,7 +52,7 @@ typedef struct Point
   Estas cores são armazenadas em uma região de memória chamada Color_Buffer , que é responsável por armazenar informações da imagem que será rasterizada na tela.
   
   
-  ![ColorBuffer](https://github.com/Horodrigo/Comp-Grafica-2020.2/images/ColorBuffer.png?raw=true)
+  ![ColorBuffer](https://github.com/Horodrigo/Comp-Grafica-2020.2/tree/main/images/ColorBuffer.png?raw=true)
     
 
   Tendo em vista que o Color_Buffer é uma região de memória, e a única informação que temos são pontos de coordenadas, utilizamos uma função offset para encontrar a informação para determinada coordenada do monitor.
@@ -74,7 +74,7 @@ Antes de iniciar, assumimos que:
 
 Note que retas que possuem ângulos iguais a 0°, 45° e 90° são triviais de serem rasterizados.
 
-![angulos_triviais](https://github.com/FelipeNasci/Line_Rasterization/blob/master/images/Pixel%20angulos%200%2090%2045.jpg?raw=true)
+![angulos_triviais](https://github.com/Horodrigo/Comp-Grafica-2020.2/tree/main/images/Pixel%20angulos%200%2090%2045.jpg?raw=true)
 
 
 PorÃ©m, retas com angulaÃ§Ãµes diferentes demandam um maior esforÃ§o para serem desenhadas. A seguir sÃ£o demonstrados alguns algoritmos para realizar esta tarefa.
@@ -96,7 +96,7 @@ y - y0 = (m * x) + (-m * x0)
 ````
 
 
-![Eq_Geral_Reta](https://github.com/FelipeNasci/Line_Rasterization/blob/master/images/Equa%C3%A7%C3%A3o%20Geral.png?raw=true)
+![Eq_Geral_Reta](https://github.com/Horodrigo/Comp-Grafica-2020.2/tree/main/images/Equa%C3%A7%C3%A3o%20Geral.png?raw=true)
 
 
 AtravÃ©s desta equaÃ§Ã£o podemos encontrar qualquer reta.
@@ -138,12 +138,12 @@ decisÃ£o = f(x,y) = Î±x + ÃŸy + c = 0
 
 Se aplicarmos um ponto na equaÃ§Ã£o implÃ­cita e obtivemos 0 como resultado, significa que o ponto estÃ¡ sobre a reta.
 
-![Efeito_Eq_Implicita](https://github.com/FelipeNasci/Line_Rasterization/blob/master/images/Efeito%20Equa%C3%A7%C3%A3o%20Impl%C3%ADcita.png?raw=true)
+![Efeito_Eq_Implicita](https://github.com/Horodrigo/Comp-Grafica-2020.2/tree/main/images/Efeito%20Equa%C3%A7%C3%A3o%20Impl%C3%ADcita.png?raw=true)
 
 Seja m = (x0 + 1, y0 + 1/2) o ponto mÃ©dio entre os pixels  (x0 + 1, y0 + 1) e  (x0 + 1, y0), iremos utilizar a funÃ§Ã£o de decisÃ£o para avaliar qual pixel acender.
 
 
-![decPontoMedio](https://github.com/FelipeNasci/Line_Rasterization/blob/master/images/PontoM%C3%A9dio.png?raw=true)
+![decPontoMedio](https://github.com/Horodrigo/Comp-Grafica-2020.2/tree/main/images/PontoM%C3%A9dio.png?raw=true)
 
 
 Note que a reta parte do ponto _(x0, y0)_ logo, nÃ£o existe decisÃ£o tomada anteriormente, podemos identificar o nosso valor de decisÃ£o aplicando f(x0 + 1,  y0  + 1/2) - f (x0,  y0).
@@ -159,12 +159,12 @@ Logo, nosso valor de decisÃ£o inicial Ã©:
 d = a + b/2
 ````
 
-![pontoMedio](https://github.com/FelipeNasci/Line_Rasterization/blob/master/images/Ponto_m%C3%A9dio.png?raw=true)
+![pontoMedio](https://github.com/Horodrigo/Comp-Grafica-2020.2/tree/main/images/Ponto_m%C3%A9dio.png?raw=true)
 
 ApÃ³s identificar qual pixel ativar atravÃ©s da funÃ§Ã£o de decisÃ£o, Ã© necessÃ¡rio verificar qual serÃ¡ o nosso prÃ³ximo ponto mÃ©dio, (x0 + 2, y0 + 1/2) ou (x0 + 2, y0 + 3/2)
 
 
-![Escolha_e_ne](https://github.com/FelipeNasci/Line_Rasterization/blob/master/images/Escolha_e_ne.png?raw=true)
+![Escolha_e_ne](https://github.com/Horodrigo/Comp-Grafica-2020.2/tree/main/images/Escolha_e_ne.png?raw=true)
 
 
 ````C
@@ -180,7 +180,7 @@ if (decisÃ£o <= 0){
 _Importante:_ Esta versÃ£o do algoritmo de Bresenham funciona apenas para _0Â° <= angulo <= 1Â°_ porÃ©m podemos obter retas com outros coeficientes angulares por reflexÃ£o, como demonstrado na imagem abaixo:
 
 
-![Bresenham_Octantes](https://github.com/FelipeNasci/Line_Rasterization/blob/master/images/Bresenham_Octantes.png?raw=true)
+![Bresenham_Octantes](https://github.com/Horodrigo/Comp-Grafica-2020.2/tree/main/images/Bresenham_Octantes.png?raw=true)
 
 
 ## Debugging - Algoritmo de Bresenham
@@ -188,7 +188,7 @@ _Importante:_ Esta versÃ£o do algoritmo de Bresenham funciona apenas para _0Â
 ExecuÃ§Ã£o do algoritmo de Bresenham
 
 
-![Bresenham](https://github.com/FelipeNasci/Line_Rasterization/blob/master/images/test%20retas.png?raw=true)
+![Bresenham](https://github.com/Horodrigo/Comp-Grafica-2020.2/tree/main/images/test%20retas.png?raw=true)
 
 
 # Resultados
@@ -198,7 +198,7 @@ ExecuÃ§Ã£o do algoritmo de Bresenham
 TraÃ§a retas a partir de 02 pontos utilizando o algoritmo de Bresenham
 
 
-![Retas](https://github.com/FelipeNasci/Line_Rasterization/blob/master/images/Linhas_Octantes.png?raw=true)
+![Retas](https://github.com/Horodrigo/Comp-Grafica-2020.2/tree/main/images/Linhas_Octantes.png?raw=true)
 
 
 ### FunÃ§Ã£o _InterporlaÃ§Ã£oCor_
@@ -211,4 +211,4 @@ TraÃ§a retas a partir de 02 pontos utilizando o algoritmo de Bresenham
 ````
 
 
-![interpolaCor](https://github.com/FelipeNasci/Line_Rasterization/blob/master/images/interpola%C3%A7%C3%A3oCor.png?raw=true)
+![interpolaCor](https://github.com/Horodrigo/Comp-Grafica-2020.2/tree/main/images/interpola%C3%A7%C3%A3oCor.png?raw=true)
