@@ -14,8 +14,6 @@ Mas antes, devemos conhecer alguns conceitos como: primitivas, rasterização, c
 
 # Rasterização de linhas
 
-Após entender a interação entre monitores e computadores, os algoritmos para traçar retas serão entendidos sem maiores dificuldades.
-
 Antes de iniciar, assumimos que:
 
 * x ≥ Δy, ou seja, 0 <= angulo_reta <= 1
