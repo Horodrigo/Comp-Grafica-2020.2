@@ -75,7 +75,7 @@ Execução do algoritmo de Bresenham
 
 Traça retas a partir de 02 pontos utilizando o algoritmo de Bresenham
 
-Não apenas três, mas várias retas foram traçadas para testar o algoritmo e tentar gerar uma reta perfeitamente horizontal e uma perfeitamente vertical.
+Não apenas três, mas várias retas foram traçadas para testar o algoritmo e tentar gerar retas horizontais e verticais.
 
 ![Retas](https://github.com/Horodrigo/Comp-Grafica-2020.2/tree/main/images/Linhas_Octantes.png?raw=true)
 
